@@ -60,7 +60,7 @@ void quickSortIterative(int arr[], int low, int high) {
 
 
 int main() {
-    const long n1 = 1000000;
+    const long n1 = 30000;
     vector<int> arr1(n1);
 
     for (int i = 0; i < n1; i++) {
@@ -68,16 +68,16 @@ int main() {
     }
 
     auto start = chrono::high_resolution_clock::now();
-    quickSortrecursive(arr1.data(), 0, n1 - 1);
+        quickSortrecursive(arr1.data(), 0, n1 - 1);
     auto end = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
+    auto duration = chrono::duration_cast<chrono::microseconds>(end - start).count();
     cout << "Array length: " << n1 << endl;
-    cout << "Time taken by Recursion: " << duration  << " nanoseconds" << endl;
+    cout << "Time taken by Recursion: " << duration  << " microseconds" << endl;
 
-    start = chrono::high_resolution_clock::now();
-    quickSortIterative(arr1.data(), 0, n1 - 1);
-    end = chrono::high_resolution_clock::now();
-    duration = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
+    auto start1 = chrono::high_resolution_clock::now();
+        quickSortIterative(arr1.data(), 0, n1 - 1);
+    auto end1 = chrono::high_resolution_clock::now();
+    auto duration1 = chrono::duration_cast<chrono::microseconds>(end1 - start1).count();
     cout << "Array length: " << n1 << endl;
-    cout << "Time taken by Iteration: " << duration  << " nanoseconds" << endl;
+    cout << "Time taken by Iteration: " << duration1  << " microseconds" << endl;
 }
